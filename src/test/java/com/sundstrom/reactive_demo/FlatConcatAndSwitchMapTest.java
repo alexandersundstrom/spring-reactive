@@ -71,6 +71,4 @@ public class FlatConcatAndSwitchMapTest {
 
     private record Pair(int id, long delay) {
     }
-
-    ;
 }
