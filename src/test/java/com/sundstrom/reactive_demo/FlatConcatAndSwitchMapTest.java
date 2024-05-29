@@ -45,7 +45,6 @@ public class FlatConcatAndSwitchMapTest {
     /**
      * Cancels any outstanding inner publishers as soon as a new value arrives
      * Good for triggering in searchboxes on word complete
-     * Example
      */
     @Test
     void switchMap() {
