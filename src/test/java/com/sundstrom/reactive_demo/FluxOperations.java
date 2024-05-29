@@ -10,7 +10,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
-public class TransformTest {
+public class FluxOperations {
 
     @Test
     void transform() {
@@ -27,7 +27,7 @@ public class TransformTest {
     }
 
     @Test
-    void transformToString() {
+    void mapNumbersToString() {
         Flux<Integer> numbers = Flux.range(1, 3);
         Flux<String> map = numbers.map(integer -> "Value " + integer);
 
@@ -39,12 +39,12 @@ public class TransformTest {
 
     @Test
     void reduce() {
-        Mono<Integer> numbers = Flux.range(0, 3)
+        Mono<Integer> numbers = Flux.range(1, 3)
                 .reduce((integer, integer2) -> integer + integer2);
 
         StepVerifier
                 .create(numbers)
-                .expectNext(3)
+                .expectNext(6)
                 .verifyComplete();
     }
 }
