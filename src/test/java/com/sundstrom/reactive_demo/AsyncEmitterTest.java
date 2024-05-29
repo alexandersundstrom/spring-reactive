@@ -18,7 +18,7 @@ public class AsyncEmitterTest {
 
     @Test
     void async() {
-        Flux<Integer> integers = Flux.<Integer>create(emitter -> this.launch(emitter, 5));
+        Flux<Integer> integers = Flux.create(emitter -> this.launch(emitter, 5));
         StepVerifier
                 .create(integers
                         .doFinally(signalType -> this.executorService.shutdown()))
