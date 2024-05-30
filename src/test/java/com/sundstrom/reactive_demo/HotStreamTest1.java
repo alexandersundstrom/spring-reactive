@@ -10,7 +10,9 @@ import java.util.function.Consumer;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class HotStreamTest1 {
-
+    /**
+     * The second subscriber subscribes after the first two emits, and only gets the last
+     */
     @Test
     void hot() {
         var first = new ArrayList<Integer>();
